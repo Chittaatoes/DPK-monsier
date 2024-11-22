@@ -82,18 +82,19 @@ body {
 /* Popup Notifikasi Styles */
 .notification-popup {
   position: fixed;
-  bottom: 70px;
+  bottom: 100px;
   left: 20px;
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  opacity: 0; /* Awalnya tersembunyi */
-  transform: translateY(20px); /* Memindahkan popup sedikit ke bawah dari posisi akhir */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Durasi dan jenis transisi */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
   z-index: 1000;
-  max-width: 300px; /* Tentukan lebar maksimum */
+  max-width: 300px; /* Default untuk mobile */
+  width: 90%; /* Menggunakan persentase untuk fleksibilitas */
   box-sizing: border-box;
 }
 
@@ -1283,4 +1284,54 @@ body {
 .menu-drinks .category-item:hover {
     transform: translateY(-10px); /* Efek mengangkat saat di-hover */
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3), 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsivitas untuk tablet */
+@media screen and (min-width: 768px) {
+  .notification-popup {
+    max-width: 400px;
+    padding: 20px;
+    font-size: 1.1em;
+    left: 30px;
+  }
+
+  .notification-content p {
+    font-size: 16px;
+  }
+
+  .notification-content .highlight {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+
+  .notification-close {
+    font-size: 14px;
+    top: 5px;
+    right: -2px;
+  }
+}
+
+/* Responsivitas untuk desktop */
+@media screen and (min-width: 1024px) {
+  .notification-popup {
+    max-width: 500px;
+    padding: 25px;
+    font-size: 1.2em;
+    left: 40px;
+  }
+
+  .notification-content p {
+    font-size: 18px;
+  }
+
+  .notification-content .highlight {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .notification-close {
+    font-size: 16px;
+    top: 8px;
+    right: 0;
+  }
 }
